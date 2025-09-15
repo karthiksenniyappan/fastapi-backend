@@ -1,0 +1,5 @@
+ 2015  aerich init -t core.config.tortoise_config
+ 2017  aerich init-db
+ 2019  python manage.py makemigrations
+ 2020  python manage.py migrate
+
