@@ -13,3 +13,9 @@ class UserCreate(BaseModel):
     username: str = Field(..., example="admin")
     email: EmailStr = Field(..., example="admin@starsystems.in")
     password: str = Field(..., min_length=6, example="demo@2025")
+
+
+class TokenSchema(BaseModel):
+    access_token: str
+    refresh_token: str
+    token_type: str = "bearer"
