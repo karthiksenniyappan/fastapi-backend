@@ -10,3 +10,5 @@ class User(AbstractModel):
     phone_number = fields.CharField(max_length=255, unique=False, default=None, null=True)
     username = fields.CharField(max_length=255, unique=True)
     password = fields.CharField(max_length=255)
+    is_active = fields.BooleanField(default=True)
+    is_admin = fields.BooleanField(default=False)
