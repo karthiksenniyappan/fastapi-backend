@@ -27,6 +27,8 @@ jobs:
       uses: astral-sh/setup-uv@v6
       with:
         version: "latest"
+    - name: Install Dependencies
+      run: uv sync --locked --all-extras --dev
     - name: Test with pytest
       run: |
         pytest -v --disable-warnings
