@@ -31,6 +31,8 @@ Install dependencies using uv
 uv sync
 ```
 
+---
+
 ## ⚙️ Configuration
 
 Copy .env.example to .env and update values:
@@ -38,6 +40,8 @@ Copy .env.example to .env and update values:
 ```shell
 cp .env.example .env
 ```
+
+---
 
 ## ▶️ Running the Application
 
@@ -52,6 +56,8 @@ Access the API docs:
 - Swagger UI → http://127.0.0.1:8000/docs
 - ReDoc → http://127.0.0.1:8000/redoc
 
+---
+
 ## ⏳ Background Tasks with Celery
 
 Start Celery worker:
@@ -60,11 +66,15 @@ Start Celery worker:
 uv run celery -A core.celery_worker.celery_app worker --loglevel=info --beat
 ```
 
+---
+
 ## 📝 Logging
 
 Logs are stored in the logs/ directory.
 
 They are automatically rotated, keeping only the last 5 days of logs.
+
+---
 
 ## 🗄 Database Migrations
 
@@ -80,6 +90,8 @@ Create new migration:
 python manage.py makemigrations
 ```
 
+---
+
 ## 🐳 Docker (Optional)
 
 Start radis server
@@ -88,16 +100,22 @@ Start radis server
  docker run -d -p 6379:6379 redis
 ```
 
+---
+
 ## Run test
 
 ```shell
 uv run pytest -v --disable-warnings
 ```
 
+---
+
 ## 📌 To-Do
 
 - Add CI/CD pipeline
 - Add API versioning
+
+---
 
 ## 🏁 License
 
