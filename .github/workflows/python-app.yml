@@ -29,8 +29,6 @@ jobs:
         version: "latest"
     - name: Install Dependencies
       run: uv sync --locked --all-extras --dev
-    - name: Publish to PyPI
-      run: uv publish pypi
     - name: Test with pytest
       run: |
-        pytest -v --disable-warnings
+        uv run --frozen pytest -v --disable-warnings
