@@ -44,7 +44,7 @@ cp .env.example .env
 Start the FastAPI server:
 
 ```shell
-python server.py
+uv run server.py
 ```
 
 Access the API docs:
@@ -57,7 +57,7 @@ Access the API docs:
 Start Celery worker:
 
 ```shell
-celery -A core.celery_worker.celery_app worker --loglevel=info --beat
+uv run celery -A core.celery_worker.celery_app worker --loglevel=info --beat
 ```
 
 ## 📝 Logging
@@ -88,9 +88,14 @@ Start radis server
  docker run -d -p 6379:6379 redis
 ```
 
+## Run test
+
+```shell
+uv run pytest -v --disable-warnings
+```
+
 ## 📌 To-Do
 
-- Add unit tests
 - Add CI/CD pipeline
 - Add API versioning
 

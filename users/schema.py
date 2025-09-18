@@ -8,11 +8,11 @@ UserTokenSchema = pydantic_model_creator(User, name="UserTokenSchema",
 
 
 class UserCreate(BaseModel):
-    first_name: str = Field(..., example="Admin")
-    last_name: str = Field(..., example="A")
-    username: str = Field(..., example="admin")
-    email: EmailStr = Field(..., example="admin@starsystems.in")
-    password: str = Field(..., min_length=6, example="demo@2025")
+    first_name: str = Field(..., json_schema_extra={"example": "John"})
+    last_name: str = Field(..., json_schema_extra={"example": "A"})
+    username: str = Field(..., json_schema_extra={"example": "Admin"})
+    email: EmailStr = Field(..., json_schema_extra={"example": "admin@example.com"})
+    password: str = Field(..., min_length=6, json_schema_extra={"example": "password"})
 
 
 class TokenSchema(BaseModel):
